@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int idade, idadenova, idadevelha, cod, codvelha, cont;
+	
+	for(cont = 0; cont<100; cont ++){
+		cout << "Digite sua idade: ";
+		cin >> idade;
+		cout << "Digite seu codigo: ";
+		cin >> cod;
+		if(cont == 0){
+			idadevelha = idade;
+			idadenova = idade;
+		}
+			if(idadevelha<idade){
+			idadevelha = idade;
+			codvelha = cod;
+			}
+			if(idadenova>idade){
+			idadenova = idade;		
+			}
+	} 	
+   cout << "Codigo da pessoa mais velha: " << codvelha;
+	cout << "\nIdade da pessoa mais nova: " << idadenova;
+}
