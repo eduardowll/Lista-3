@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+/*
+Chico tem 1,50m e cresce 2 centímetros por ano, enquanto Juca tem 1,10m e cresce 3 centímetros por 
+ano. Construir um algoritmo que calcule e imprima quantos anos serão necessários para que Juca seja 
+maior que Chico.  
+*/
+
+int main (){
+	
+	float alturachico = 150, alturajuca = 110, crecichico = 2, crecijuca = 3;
+	int ano;	
+	
+	while(alturajuca <= alturachico){
+		alturachico = alturachico + crecichico;
+		alturajuca = alturajuca + crecijuca;
+		ano++;
+	}
+	
+	cout << "Juca demorara " << ano << " anos para passar a altura de Chico";	
+}
