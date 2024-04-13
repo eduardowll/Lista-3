@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+/*
+Crie um algoritmo que ajude o DETRAN a saber o total de recursos que foram arrecadados com a 
+aplicação de multas de trânsito. O algoritmo deve ler as seguintes informações para cada um dos N 
+motoristas:  
+- O número da carteira de motorista (inteiro);  
+- Número de multas;  
+- O valor de cada uma das multas.  
+Deve ser impresso o valor da dívida de cada motorista e ao final da leitura o total de recursos arrecadados 
+(somatório de todas as multas). O algoritmo deverá imprimir também o número da carteira do motorista 
+que obteve o maior número de multas.  
+*/
+
+int main(){
+	
+	int numcarte, numultas, maismultas, qntdmoto, cont1, cont2, cartemaismultas;
+	float valormulta = 0, dividamulta, valortotal;
+	
+	cout << "DETRAN\n";
+	cout << "Sao quantos motoristas: ";
+	cin >> qntdmoto;
+	for(cont1 = 0; cont1 < qntdmoto; cont1++){
+		cout << "\nNumero da carteira do motorista: ";
+		cin >> numcarte;
+		cout << "Numero de multas: ";
+		cin >> numultas;
+		dividamulta = 0;
+		if(cont1 == 0){
+			maismultas = numultas;
+			cartemaismultas = numcarte;
+		}
+			if(maismultas > numcarte){
+				maismultas = numcarte;
+				cartemaismultas = numcarte;
+			}
+				for(cont2 = 0; cont2 < numultas; cont2++){
+					cout << "Valor da multa: ";
+					cin >> valormulta;
+					dividamulta = dividamulta + valormulta;
+				}
+		cout << "O valor total das multas do mototorista de carteira " << numcarte << " e: " << dividamulta << " reais\n";
+		valortotal = dividamulta + valortotal;
+	}
+	cout << "\nValor total arrecadado: " << valortotal << " reais";
+	cout << "\nNumero da carteira do motorista com mais multas: " << cartemaismultas;
+}
