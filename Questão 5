@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+/*
+Faça um algoritmo que leia as matrículas e as respectivas médias finais de vários alunos de uma turma, 
+até que seja digitada uma média negativa. Ao final, o algoritmo deve mostrar a quantidade de alunos 
+aprovados (média >=7), reprovados (média <3) ou em recuperação. Além disso, o algoritmo deve mostrar 
+as matrículas de todos os alunos que obtiveram médias superiores a 9.
+*/
+
+
+int main(){
+	
+	int cont, matricula, recuperacao = 0, aprovados = 0, reprovados = 0, medialta = 0;
+	float media;
+	
+	
+	do{
+		media = 0;
+		cout << "Qual e sua matricula?: ";
+		cin >> matricula;
+		cout << "Qual foi sua media?: ";
+		cin >> media;
+		if(media >=9){
+			cout << "Parabens, sua media foi maior que 9\n";
+			medialta++;
+			aprovados++;
+		}
+		if(media <= 3){
+			reprovados++;
+		}
+		if(media <= 6 && media >=4){
+			recuperacao++;
+		}
+		if(media >= 7 && media <= 8){
+			aprovados++;
+		}
+	}while(media > 0);
+	
+	cout << "\nNumero de alunos aprovados: " << aprovados << "\n";
+	cout << "\nNumero de alunos com media superior a 9: " << medialta << "\n";
+	cout << "\nNumero de alunos que ficaram de recuperacao: " << recuperacao << "\n";
+	cout << "\nNumero de alunos reprovados: " << reprovados << "\n";
+}
