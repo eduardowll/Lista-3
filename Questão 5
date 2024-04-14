@@ -26,7 +26,7 @@ int main(){
 			medialta++;
 			aprovados++;
 		}
-		if(media <= 3){
+		if(media <= 3 && media >= 1){
 			reprovados++;
 		}
 		if(media <= 6 && media >=4){
