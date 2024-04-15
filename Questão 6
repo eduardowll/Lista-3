@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+/*
+Em um jogo de adivinhação, o jogador deve descobrir um número entre 1 e 10 usando até três tentativas. 
+A cada tentativa o jogador é informado se o número foi descoberto, se ele é maior ou menor do que a 
+tentativa. Se após três tentativas o jogador não descobrir o número, então ele perde o jogo. Faça um 
+algoritmo que implemente esse jogo, considerando que o número a ser descoberto será definido dentro 
+do algoritmo e não estará visível para o usuário. 
+*/
+
+
+int main(){
+	
+	int tentativa = 0, num, numcerto = 9;
+	
+	cout << "\tJOGO DA ADIVINHACAO\n";
+	do{
+		tentativa++;
+		cout << "\nDigite um numero: ";
+		cin >> num;
+		if(tentativa == 1){
+			if(num < numcerto){
+				cout << "Numero menor que o numero certo";
+			}
+			if(num > numcerto){
+				cout << "Numero maior que o numero certo";
+			}
+		}
+		if(tentativa == 2){
+			if(num < numcerto){
+				cout << "Numero menor que o numero certo";
+			}
+			if(num > numcerto){
+				cout << "Numero maior que o numero certo";
+			}
+		}
+	}while(tentativa < 3 && numcerto != num);
+		if(numcerto == num){
+			cout << "\nGANHOU!!";
+		}else{
+			cout << "\nPERDEU!!";
+		}
+}
