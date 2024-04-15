@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+	
+	float resultado, num;
+	char operacao;
+	
+	cout << "Digite o primeiro numero: ";
+	cin >> resultado;
+	do{	
+		cout << "Digite a operacao (+, -, *, /) ou '=' pra finalizar: ";
+		cin >> operacao;
+		if(operacao != '='){
+			cout << "Digite um numero: ";
+			cin >> num;
+			if (operacao == '+'){
+				resultado = resultado + num;
+			}
+			if (operacao == '-'){
+				resultado = resultado - num;
+			}
+			if (operacao == '*'){
+				resultado = resultado * num;
+			}
+			if (operacao == '/'){
+				resultado = resultado / num;
+			}
+		}
+	}while(operacao != '=');
+	cout  << resultado;
+}
